@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Component } from "react";
+import Card from "./components/Card";
+import styled from "styled-components";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <CardContainer className="App">
+        <Intro>
+          <h1>FlipCard</h1>
+        </Intro>
+        <Card />
+        <Card />
+      </CardContainer>
     );
   }
 }
 
 export default App;
+
+const CardContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1000px;
+  background: #1b2021;
+  padding: 10px;
+  min-height: 100vh;
+`;
+
+const Intro = styled.div`
+  text-align: center;
+  color: #2176FF;
+  font-size: 20px;
+`;
+
+CardContainer.displayName = "CardContainer";
+Intro.displayName = "Intro";
